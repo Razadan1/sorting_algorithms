@@ -14,18 +14,13 @@ This project is meant to be done by groups of two students. Each group of two sh
 
 [Sorting algorithm](https://intranet.alxswe.com/rltoken/-j5MKLBlzZAC2RfJ5DTBIg)
 
-
 [Big O notation](https://intranet.alxswe.com/rltoken/WRvrE2BaNVQFssHiUATTrw)
-
 
 [Sorting algorithms animations](https://intranet.alxswe.com/rltoken/ol0P7NbYVb5R31iOv4Q40A)
 
-
 [15 sorting algorithms in 6 minutes](https://intranet.alxswe.com/rltoken/_I0aEvhfJ66Xyob6dd9Utw) (WARNING: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms)
 
-
 [CS50 Algorithms explanation in detail by David Malan](https://intranet.alxswe.com/rltoken/Ea93HeEYuNkOL7sGb6zzGg)
-
 
 [All about sorting algorithms](https://intranet.alxswe.com/rltoken/21X_eaj5RGcLIL9mZv2sqw)
 
@@ -70,16 +65,21 @@ There should be one project repository per group. If you clone/fork/whatever a p
 More Info
 Data Structure and Functions
 For this project you are given the following print_array, and print_list functions:
-#include <stdlib.h>
-#include <stdio.h>
+
+# include <stdlib.h>
+
+# include <stdio.h>
 
 /**
- * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
+
+- print_array - Prints an array of integers
+
+*
+
+- @array: The array to be printed
+- @size: Number of elements in @array
  */
-void print_array(const int *array, size_t size)
+void print_array(const int*array, size_t size)
 {
     size_t i;
 
@@ -93,15 +93,20 @@ void print_array(const int *array, size_t size)
     }
     printf("\n");
 }
-#include <stdio.h>
-#include "sort.h"
+
+# include <stdio.h>
+
+# include "sort.h"
 
 /**
- * print_list - Prints a list of integers
- *
- * @list: The list to be printed
+
+- print_list - Prints a list of integers
+
+*
+
+- @list: The list to be printed
  */
-void print_list(const listint_t *list)
+void print_list(const listint_t*list)
 {
     int i;
 
@@ -120,16 +125,18 @@ Our files print_array.c and print_list.c (containing the print_array and print_l
 Please declare the prototype of the functions print_array and print_list in your sort.h header file
 Please use the following data structure for doubly linked list:
 /**
- * struct listint_s - Doubly linked list node
- *
- * @n: Integer stored in the node
- * @prev: Pointer to the previous element of the list
- * @next: Pointer to the next element of the list
+- struct listint_s - Doubly linked list node
+
+*
+
+- @n: Integer stored in the node
+- @prev: Pointer to the previous element of the list
+- @next: Pointer to the next element of the list
  */
 typedef struct listint_s
 {
     const int n;
-    struct listint_s *prev;
+    struct listint_s*prev;
     struct listint_s *next;
 } listint_t;
 Please, note this format is used for Quiz and Task questions.
