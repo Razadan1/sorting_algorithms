@@ -27,6 +27,7 @@ void print_array(const int *array, size_t size);
 
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-
+void shift_nodes(listint_t **list, listint_t *tmp, listint_t *tmp_next,
+listint_t *tmp_prev);
 
 #endif /* MAIN_H */

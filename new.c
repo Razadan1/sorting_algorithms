@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "sort.h"
 
+void shift_nodes(listint_t **list, listint_t *tmp, listint_t *tmp_next,
+listint_t *tmp_prev);
 /**
 * insertion_sort_list - Sorts a doubly linked list of integers in asc order
 * @list: A pointer to the head of the doubly linked list
