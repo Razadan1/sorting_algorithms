@@ -40,29 +40,29 @@ while (node != NULL)
 void shift_nodes(listint_t **list, listint_t *tmp, listint_t *tmp_next,
 listint_t *tmp_prev)
 {
-while (tmp->prev != NULL && tmp_prev->n > tmp->n)
-{
-	if (tmp_next != NULL)
-		tmp_next->prev = tmp_prev;
-	tmp_prev->next = tmp_next;
-
-	if (tmp_prev->prev == NULL)
+	while (tmp->prev != NULL && tmp_prev->n > tmp->n)
 	{
-		tmp_prev->prev = tmp;
-		*list = tmp;
-		tmp->prev = NULL;
-	}
-	else
-	{
-		tmp->prev = tmp_prev->prev;
-		tmp_prev->prev->next = tmp;
-		tmp_prev->prev = tmp;
-	}
+		if (tmp_next != NULL)
+			tmp_next->prev = tmp_prev;
+		tmp_prev->next = tmp_next;
 
-	tmp->next = tmp_prev;
-	tmp_prev = tmp->prev;
-	tmp_next = tmp->next;
+		if (tmp_prev->prev == NULL)
+		{
+			tmp_prev->prev = tmp;
+			*list = tmp;
+			tmp->prev = NULL;
+		}
+		else
+		{
+			tmp->prev = tmp_prev->prev;
+			tmp_prev->prev->next = tmp;
+			tmp_prev->prev = tmp;
+		}
 
-	print_list(*list);
-}
+		tmp->next = tmp_prev;
+		tmp_prev = tmp->prev;
+		tmp_next = tmp->next;
+
+		print_list(*list);
+	}
 }
