@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "sort.h"
 
-
 /**
- * insertion_sort_list - Sorts a doubly linked list of integers in the ascending order
+ * insertion_sort_list - Sorts a doubly linked list of
+ * integers in the ascending order
  *
  * @list: A pointer to the head of the doubly linked list
  * @array: Array to convert to a doubly linked list
@@ -14,14 +14,13 @@
  */
 void insertion_sort_list(listint_t **list)
 {
+	/* Declare pointers for traversal and temporary storage */
+	listint_t *node, *tmp, *next, *tmp_next, *tmp_prev;
+	int i = 0;
 
-    /* Declare pointers for traversal and temporary storage */
-    listint_t *node, *tmp, *next, *tmp_next, *tmp_prev;
-    int i = 0;
-
-    /* Check if the list is empty or contains only one node */
-    if (list == NULL || (*list)->next == NULL)
-	    return;
+	/* Check if the list is empty or contains only one node */
+	if (list == NULL || (*list)->next == NULL)
+		return;
 
     /* Start sorting from the second node */
     node = *list;
@@ -45,18 +44,7 @@ void insertion_sort_list(listint_t **list)
 		    tmp_prev->next = tmp_next;
 
             /* Handle cases where the previous node is the head of the list */
-		    if (tmp_prev->prev == NULL)
-		    {
-			    tmp_prev->prev = tmp;
-			    *list = tmp;
-			    tmp->prev = NULL;
-		    }
-		    else
-		    {
-			    tmp->prev = tmp_prev->prev;
-			    tmp_prev->prev->next = tmp;
-			    tmp_prev->prev = tmp;
-		    }
+			void nodes_conditions();
             /* Adjust temporary pointers for the next iteration */
 		    tmp->next = tmp_prev;
 		    tmp_prev = tmp->prev;
@@ -69,4 +57,25 @@ void insertion_sort_list(listint_t **list)
 	    node = next;
 	    i++;
     }
+}
+
+/**
+ * nodes_conditions - These are the conditions while tmp-> prev is null
+ * and is greater than tmp -> tmp-> n
+ * Return: return void
+*/
+void nodes_conditions()
+{
+	if (tmp_prev->prev == NULL)
+	{
+		tmp_prev->prev = tmp;
+		*list = tmp;
+		tmp->prev = NULL;
+	}
+	else
+	{
+		tmp->prev = tmp_prev->prev;
+		tmp_prev->prev->next = tmp;
+		tmp_prev->prev = tmp;
+	}
 }
