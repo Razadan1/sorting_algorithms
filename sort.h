@@ -30,4 +30,8 @@ void selection_sort(int *array, size_t size);
 void shift_nodes(listint_t **list, listint_t *tmp, listint_t *tmp_next,
 listint_t *tmp_prev);
 
+void quick_sort(int *array, size_t size);
+size_t lomuto_partition(int *array, size_t low, size_t high, size_t size);
+void quick_sorting(int *array, size_t size, ssize_t small, ssize_t large);
+
 #endif /* MAIN_H */
